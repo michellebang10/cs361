@@ -1,16 +1,23 @@
 import random
 import sys
 import time
+import os
+
+
+#title: prng.py
 
 while True:
-    time.sleep(3)
-    f = open("prng-service.txt", "r")
+    time.sleep(1)
+    f = open("assignment 1/prng-service.txt", "r+")
     text = f.read()
-    f.close()
     if text == "run":
-        num = random.randint(1, sys.maxsize)
-        f = open("prng-service.txt", "w")
-        f.write(num)
-        f.close()
+        #if os.path.getsize("assignment 1/prng-service.txt") != 0:
+        f.seek(0)
+        f.truncate(0)
+        f = open("assignment 1/prng-service.txt", "w")
+        #num = random.randint(1, sys.maxsize)
+        num = 5
+        f.write(str(num))
+    f.close()
 
 
