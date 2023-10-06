@@ -1,5 +1,6 @@
 import time
 import os
+from PIL import Image
 
 #title: imgsrv.py
 
@@ -23,4 +24,6 @@ while True:
         f.seek(0)
         f.truncate(0)
         f.write(files[new_num])
+        img = Image.open("images/" + files[new_num])
+        img.show()
     f.close()
