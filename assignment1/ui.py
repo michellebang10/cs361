@@ -8,6 +8,7 @@ while True:
     if userInput == 1:
         f = open("prng-service.txt", "w")
         f.write("run")
+        time.sleep(2)
         f.close()
         time.sleep(5)
         f = open("prng-service.txt", "r")
